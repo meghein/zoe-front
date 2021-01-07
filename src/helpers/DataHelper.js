@@ -3,7 +3,7 @@ import axios from 'axios';
 const getPageData = async () => {
 	const data = {home: {}, about: {}}
 	return await axios
-		.get(`${process.env.DOMAIN}admin/jsonapi/node/page`)
+		.get(`${process.env.DOMAIN}/admin/jsonapi/node/page`)
 		.then(res => {
 			// Loop through data to populate data object with content
 			for (const page of res.data.data) {
@@ -21,7 +21,7 @@ const getPageData = async () => {
 			return data
 		}).then(res => {
 			// pull image from separate get request based on first call
-			return axios.get(`${process.env.DOMAIN}admin/jsonapi/file/file/${res.about.imageId}`).then(res => {
+			return axios.get(`${process.env.DOMAIN}/admin/jsonapi/file/file/${res.about.imageId}`).then(res => {
 				data.about.imageUrl = res.data.data.attributes.uri.url
 				return data
 			}).catch(error => console.log(error))

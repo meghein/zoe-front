@@ -11,6 +11,6 @@
 	<div class='body'>
 		{@html content.body}
 	</div>
-	<img src="{`http://zoe.meghanhein.com${content.imageUrl}`}" alt="{content.imageAlt}">
+	<img src="{`${process.env.DOMAIN}${content.imageUrl}`}" alt="{content.imageAlt}">
 	{/if}
 </div>
