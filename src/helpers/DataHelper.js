@@ -28,4 +28,4 @@ const getPageData = async () => {
 		}).catch(error => console.log(error))
 }
 
-export { getData }
+export { getPageData }
