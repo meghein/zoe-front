@@ -1,5 +1,6 @@
 <script>
 	import Home from './Home.svelte'
+	import About from './About.svelte'
 </script>
 
 <style type="text/scss">
@@ -8,4 +9,5 @@
 
 <main>
 	<Home/>
+	<About/>
 </main>
