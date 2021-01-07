@@ -9,8 +9,8 @@
 	};
 </script>
 
-<style>
-
+<style type="text/scss">
+	@import '../styles/Nav.scss';
 </style>
 
 <nav id='nav-container'>

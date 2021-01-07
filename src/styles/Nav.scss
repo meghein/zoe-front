@@ -1,0 +1,19 @@
+#nav-container {
+	#nav-items {
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		padding-inline-start: 0;
+		padding-top: 1em;
+		padding-bottom: .5em;
+		margin: 0;
+		li{
+			display : inline;
+			padding: 1em;
+			font-size: 1.5em;
+		}
+		&:hover > li:not(:hover) {
+			opacity: 0.5;
+		}
+	}
+}
