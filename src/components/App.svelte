@@ -32,5 +32,7 @@
 	<Publications/>
 	<Contact/>
 	<Footer/>
+	{:else}
+		<img src="loading-spinner.svg" alt="Content loading, hold on a sec!">
 	{/if}
 </main>
