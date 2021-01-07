@@ -6,7 +6,7 @@
 	@import '../styles/About.scss';
 </style>
 
-<div id='about-page'>
+<div id='about'>
 	{#if content}
 	{@html content.body}
 	<img src="{`http://zoe.meghanhein.com${content.imageUrl}`}" alt="{content.imageAlt}">
