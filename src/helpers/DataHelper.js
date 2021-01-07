@@ -21,7 +21,7 @@ const getData = async () => {
 		}).then(res => {
 			return axios.get(`${process.env.DOMAIN}admin/jsonapi/file/file/${res.about.imageId}`).then(res => {
 				data.about.imageUrl = res.data.data.attributes.uri.url
-				console.log(data)
+				// console.log(data)
 				return data
 			})
 		}).catch(error => console.log(error))

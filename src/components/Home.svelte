@@ -1,14 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
-	import { getData } from '../helpers/DataHelper'
-
-	let properties = {};
-
-	onMount(() => {
-		getData().then(res => {
-			properties = res.home
-		})
-	})
+	export let content;
 </script>
 
 <style type="text/scss">
@@ -16,9 +7,9 @@
 </style>
 
 <div>
-	{#if properties}
-	<h1>{properties.title}</h1>
-	<h2>{properties.field}</h2>
-	{@html properties.body}
+	{#if content}
+	<h1>{content.title}</h1>
+	<h2>{content.field}</h2>
+	{@html content.body}
 	{/if}
 </div>
