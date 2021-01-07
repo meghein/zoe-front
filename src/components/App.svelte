@@ -1,13 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
-	import { getData } from '../helpers/DataHelper';
+	import { getPageData } from '../helpers/DataHelper';
 	import Home from './Home.svelte';
 	import About from './About.svelte';
 
 	let data;
 
 	onMount(() => {
-		getData().then(res => {
+		getPageData().then(res => {
 			data = res
 		})
 	})
