@@ -1,14 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
 	import { getPageData } from '../helpers/DataHelper';
+	import Nav from './Nav.svelte';
 	import Home from './Home.svelte';
 	import About from './About.svelte';
 
-	let data;
+	let pageData;
 
 	onMount(() => {
 		getPageData().then(res => {
-			data = res
+			pageData = res
 		})
 	})
 	
@@ -19,8 +20,9 @@
 </style>
 
 <main>
-	{#if data}
-	<Home content={data.home}/>
-	<About content={data.about}/>
+	{#if pageData}
+	<Nav/>
+	<Home content={pageData.home}/>
+	<About content={pageData.about}/>
 	{/if}
 </main>
