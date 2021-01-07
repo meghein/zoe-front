@@ -6,7 +6,7 @@
 	@import '../styles/Home.scss';
 </style>
 
-<div>
+<div id='home'>
 	{#if content}
 	<h1>{content.title}</h1>
 	<h2>{content.field}</h2>
