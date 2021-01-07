@@ -8,7 +8,9 @@
 
 <div id='about'>
 	{#if content}
-	{@html content.body}
+	<div class='body'>
+		{@html content.body}
+	</div>
 	<img src="{`http://zoe.meghanhein.com${content.imageUrl}`}" alt="{content.imageAlt}">
 	{/if}
 </div>
