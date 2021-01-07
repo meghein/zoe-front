@@ -5,6 +5,8 @@ import livereload from 'rollup-plugin-livereload';
 import preprocess from 'svelte-preprocess';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import { config } from 'dotenv';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -48,6 +50,14 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
+		replace({   FOO: 'bar',      
+    process: JSON.stringify({
+      env: {
+         isProd: production,
+         ...config().parsed
+      } 
+   }),
+  }),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In

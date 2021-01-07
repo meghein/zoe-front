@@ -3,12 +3,13 @@
 	import { getData } from '../helpers/DataHelper'
 
 	let properties = {};
-	let image = ''
+	let image = '';
+	const domain = process.env.DOMAIN;
 
 	onMount(() => {
 		getData().then(res => {
 			properties = res
-			image = `http://zoe.meghanhein.com/admin/jsonapi/file/file/${res.aboutImageId}`
+			image = `${process.env.DOMAIN}admin/jsonapi/file/file/${res.aboutImageId}`
 		})
 	})
 </script>

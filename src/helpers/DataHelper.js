@@ -3,7 +3,7 @@ import axios from 'axios';
 const getData = async () => {
 	const data = {}
 	return await axios
-		.get('http://zoe.meghanhein.com/admin/jsonapi/node/page')
+		.get(`${process.env.DOMAIN}admin/jsonapi/node/page`)
 		.then(res => {
 			for (const page of res.data.data) {
 				if (page.attributes.title === 'Home Page') {
@@ -19,7 +19,7 @@ const getData = async () => {
 			}
 			return data
 		}).then(res => {
-			return axios.get(`http://zoe.meghanhein.com/admin/jsonapi/file/file/${res.aboutImageId}`).then(res => {
+			return axios.get(`${process.env.DOMAIN}admin/jsonapi/file/file/${res.aboutImageId}`).then(res => {
 				data.aboutImageUrl = res.data.data.attributes.uri.url
 				return data
 			})
