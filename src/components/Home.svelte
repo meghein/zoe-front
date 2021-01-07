@@ -17,8 +17,8 @@
 
 <div>
 	{#if properties}
-	<h1>{properties.title}</h1>
-	<h2>{properties.field}</h2>
-	{@html properties.body}
+	<h1>{properties.homeTitle}</h1>
+	<h2>{properties.homeField}</h2>
+	{@html properties.homeBody}
 	{/if}
 </div>
