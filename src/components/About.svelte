@@ -3,13 +3,11 @@
 	import { getData } from '../helpers/DataHelper'
 
 	let properties = {};
-	let image = '';
 	const domain = process.env.DOMAIN;
 
 	onMount(() => {
 		getData().then(res => {
-			properties = res
-			image = `${process.env.DOMAIN}admin/jsonapi/file/file/${res.aboutImageId}`
+			properties = res.about
 		})
 	})
 </script>
@@ -19,8 +17,8 @@
 </style>
 
 <div id='about-page'>
-	{#if properties.aboutBody}
-	{@html properties.aboutBody}
-	<img src="{`http://zoe.meghanhein.com${properties.aboutImageUrl}`}" alt="{properties.aboutImageAlt}">
+	{#if properties.body}
+	{@html properties.body}
+	<img src="{`http://zoe.meghanhein.com${properties.imageUrl}`}" alt="{properties.imageAlt}">
 	{/if}
 </div>
